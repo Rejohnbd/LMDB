@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\FirstDatabaseController;
+use App\Http\Controllers\PgsqlDatabaseController;
 use App\Http\Controllers\SecondDatabaseController;
+use App\Models\PgsqlDatabase;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::apiResource('first-db', FirstDatabaseController::class);
 Route::apiResource('second-db', SecondDatabaseController::class);
+Route::apiResource('pgsql-db', PgsqlDatabaseController::class);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
